@@ -138,5 +138,27 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\src\Icons\Close.png" />
+    <Content Include="resources\src\Icons\Close_20.png" />
+    <Content Include="resources\src\Icons\Close_25.png" />
+    <Content Include="resources\src\Icons\List_20.png" />
+    <Content Include="resources\src\Icons\List_25.png" />
+    <Content Include="resources\src\Icons\loop_Active.png" />
+    <Content Include="resources\src\Icons\loop_Inactive.png" />
+    <Content Include="resources\src\Icons\Music.png" />
+    <Content Include="resources\src\Icons\next %282%29.png" />
+    <Content Include="resources\src\Icons\Next.png" />
+    <Content Include="resources\src\Icons\output-onlinepngtools %2810%29.png" />
+    <Content Include="resources\src\Icons\output-onlinepngtools %2811%29.png" />
+    <Content Include="resources\src\Icons\Pause.png" />
+    <Content Include="resources\src\Icons\Play.png" />
+    <Content Include="resources\src\Icons\Play_55.png" />
+    <Content Include="resources\src\Icons\repeat_Active.png" />
+    <Content Include="resources\src\Icons\repeat_Inactive.png" />
+    <Content Include="resources\src\Icons\Search.png" />
+    <Content Include="resources\src\Icons\Skip.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

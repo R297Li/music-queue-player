@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace MusicApp
 {
@@ -225,6 +226,18 @@ namespace MusicApp
         {
             MediaPlayerAction(ActionKeys.Skip);
             return;
+        }
+
+        private void MusicPlayerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.IO.DirectoryInfo directoryInfo = new DirectoryInfo(_musicPlayer.AUDIO_FILE_DIRECTORY);
+
+            foreach (FileInfo file in directoryInfo.GetFiles())
+            {
+                file.Delete();
+            }
+
+            Directory.Delete(_musicPlayer.AUDIO_FILE_DIRECTORY);
         }
     }
 }

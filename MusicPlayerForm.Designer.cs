@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusicPlayerForm));
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.BackPanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SubInfo = new System.Windows.Forms.Label();
             this.MainInfo = new System.Windows.Forms.Label();
             this.SearchBoxBorder = new System.Windows.Forms.Panel();
@@ -43,8 +45,6 @@
             this.SkipButton = new System.Windows.Forms.Button();
             this.BackgroundBorder = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.BackPanel.SuspendLayout();
             this.SearchBoxBorder.SuspendLayout();
             this.SearchBoxContainer.SuspendLayout();
@@ -69,6 +69,32 @@
             this.BackPanel.TabIndex = 7;
             this.BackPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BackPanel_MouseDown);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(56)))), ((int)(((byte)(57)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(24, 45);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(25, 25);
+            this.button2.TabIndex = 14;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(56)))), ((int)(((byte)(57)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(24, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 25);
+            this.button1.TabIndex = 13;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // SubInfo
             // 
             this.SubInfo.AutoEllipsis = true;
@@ -78,7 +104,7 @@
             this.SubInfo.Location = new System.Drawing.Point(131, 45);
             this.SubInfo.MaximumSize = new System.Drawing.Size(350, 25);
             this.SubInfo.Name = "SubInfo";
-            this.SubInfo.Size = new System.Drawing.Size(179, 19);
+            this.SubInfo.Size = new System.Drawing.Size(140, 15);
             this.SubInfo.TabIndex = 12;
             this.SubInfo.Text = "Developed By Richard Li";
             // 
@@ -91,7 +117,7 @@
             this.MainInfo.Location = new System.Drawing.Point(131, 19);
             this.MainInfo.MaximumSize = new System.Drawing.Size(400, 25);
             this.MainInfo.Name = "MainInfo";
-            this.MainInfo.Size = new System.Drawing.Size(159, 21);
+            this.MainInfo.Size = new System.Drawing.Size(126, 17);
             this.MainInfo.TabIndex = 11;
             this.MainInfo.Text = "Music Queue Player";
             // 
@@ -129,7 +155,7 @@
             this.SearchBox.Font = new System.Drawing.Font("Metrophobic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBox.Location = new System.Drawing.Point(30, 2);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(390, 24);
+            this.SearchBox.Size = new System.Drawing.Size(390, 19);
             this.SearchBox.TabIndex = 0;
             this.SearchBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchBox_KeyUp);
             // 
@@ -197,32 +223,6 @@
             this.BackgroundBorder.Size = new System.Drawing.Size(506, 124);
             this.BackgroundBorder.TabIndex = 8;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(56)))), ((int)(((byte)(57)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(24, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 25);
-            this.button1.TabIndex = 13;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(56)))), ((int)(((byte)(57)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(24, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 25);
-            this.button2.TabIndex = 14;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // MusicPlayerForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -235,6 +235,7 @@
             this.Name = "MusicPlayerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MusicPlayerForm_FormClosed);
             this.BackPanel.ResumeLayout(false);
             this.BackPanel.PerformLayout();
             this.SearchBoxBorder.ResumeLayout(false);

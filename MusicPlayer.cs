@@ -20,7 +20,7 @@ namespace MusicApp
         /// <summary>
         /// Directory corresponding to temporary downloaded audio files
         /// </summary>
-        private const string AUDIO_FILE_DIRECTORY = "F:\\windows_music_app\\MusicApp\\MusicApp\\temporary\\musicCache\\";
+        public string AUDIO_FILE_DIRECTORY;
 
         /// <summary>
         /// Internal class used to organize song data
@@ -58,6 +58,8 @@ namespace MusicApp
 
             _windowsPlayer.settings.autoStart = false;
             _windowsPlayer.PlayStateChange += new _WMPOCXEvents_PlayStateChangeEventHandler(PlayerStateEvent);
+
+            AUDIO_FILE_DIRECTORY = this.GetTemporaryDirectory();
         }
 
         /// <summary>
@@ -71,6 +73,25 @@ namespace MusicApp
             {
                 Display(_mainInfoDisplay, _currentSong.Name, Color.LightSteelBlue);
             }
+        }
+
+        private string GetTemporaryDirectory()
+        {
+            string tempDir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+
+            try
+            {
+                Directory.CreateDirectory(tempDir);
+            }
+            catch
+            {
+                tempDir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                Directory.CreateDirectory(tempDir);
+            }
+
+            tempDir = String.Concat(tempDir, "\\");
+
+            return tempDir;
         }
 
         /// <summary>
