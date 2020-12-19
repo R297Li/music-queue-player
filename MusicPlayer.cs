@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
 using YoutubeExplode;
-using YoutubeExplode.Models.MediaStreams;
 using System.Net;
+using YoutubeExplode.Videos.Streams;
 
 namespace MusicApp
 {
@@ -250,18 +248,18 @@ namespace MusicApp
             string filePath = String.Format("{0}{1}.{2}", AUDIO_FILE_DIRECTORY, videoUrl, fileExtension);
 
             // Get video info
-            var videoInfo = await _youtubeClient.GetVideoAsync(videoUrl);
+            var videoInfo = await _youtubeClient.Videos.GetAsync(videoUrl);
 
             if (!File.Exists(filePath))
             {
                 // Get video metadata from youtube url
-                var videoStreamInfo = await _youtubeClient.GetVideoMediaStreamInfosAsync(videoUrl);
+                var videoStreamInfo = await _youtubeClient.Videos.Streams.GetManifestAsync(videoUrl);
 
                 // Extract audio from video metadata
-                var audioStreamInfo = videoStreamInfo.Audio.WithHighestBitrate();
+                var audioStreamInfo = videoStreamInfo.GetAudioOnly().WithHighestBitrate();
 
                 // Download video to specified file path
-                await _youtubeClient.DownloadMediaStreamAsync(audioStreamInfo, filePath);
+                await _youtubeClient.Videos.Streams.DownloadAsync(audioStreamInfo, filePath);
 
                 if (!File.Exists(filePath))
                 {
